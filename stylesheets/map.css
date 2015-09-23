@@ -211,8 +211,7 @@ div.disclaimer{
 #layer-toggle{
 	height: 60px;
 	width: 60px;
-	margin-left: 5px;
-	float:left;
+    margin-right:13px;
     background: url(icons/layers.png) -1px -1px;
 }
 #layer-toggle:hover, #layer-toggle:active{
@@ -222,7 +221,7 @@ div.disclaimer{
 #directions-toggle{
 	height: 60px;
 	width: 60px;
-	float:left;
+    margin-right:13px;
     background: url(https://maps.gstatic.com/mapfiles/maps_lite/images/mobile9.png) -74px -65px;
 }
 #directions-toggle:hover, #directions-toggle:active{
@@ -232,7 +231,7 @@ div.disclaimer{
 #print-button{
 	height: 60px;
 	width: 60px;
-	float:left;
+    margin-right:13px;
     background: url(icons/printer.png) -1px -1px;
 }
 #print-button:hover, #print-button:active{
