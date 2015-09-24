@@ -233,16 +233,6 @@ input{
     background: url(https://maps.gstatic.com/mapfiles/maps_lite/images/mobile9.png) -138px -65px;
 }
 
-#close-control{
-	position: absolute;
-	top: 4px;
-	left: 2px;
-	z-index: 999;
-	height: 32px;
-	width: 32px;
-    background: url(icons/back.png);
-}
-
 #where-am-i{
 	height: 60px;
 	width: 60px;
@@ -254,6 +244,16 @@ input{
 	width: 60px;
     background: url(https://maps.gstatic.com/mapfiles/maps_lite/images/mobile9.png) -202px 0;
     margin-right:13px;
+}
+
+#close-control{
+	position: absolute;
+	top: 4px;
+	left: 2px;
+	z-index: 999;
+	height: 32px;
+	width: 32px;
+    background: url(icons/back.png);
 }
 
 .icon-scale {

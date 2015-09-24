@@ -55,17 +55,23 @@ fieldset{
 }
 
 /*Control panel stuff*/
+#toggleable-div{
+	max-height: calc(100% - 30px);
+    overflow-y: scroll;
+}
+
 #control-cell{
 	background-color: white;
 	z-index: 800;
 	position: absolute;
-	top: 64px;
-	left: 10px;
-	height:calc(100% - 74px);
+	top: 47px;
+	/*left: 10px;*/
+	right: 72px;
+	height:calc(100% - 68px);
 	border: 1px solid grey;
 	border-radius: 2px;
 	white-space: nowrap;
-	overflow-y: auto;
+	overflow-y: hidden;
 	overflow-x: hidden;
 	float:left;
 }
@@ -238,16 +244,6 @@ div.disclaimer{
     background: url(icons/printer.png) -67px -1px;
 }
 
-#close-control{
-	position: absolute;
-	top: 67px;
-	left: 13px;
-	z-index: 900;
-	height: 24px;
-	width: 24px;
-    background: url(icons/close.png);
-}
-
 #where-am-i{
 	height: 60px;
 	width: 60px;
@@ -259,6 +255,16 @@ div.disclaimer{
 }
 #where-am-i:active{
     background: url(https://maps.gstatic.com/mapfiles/maps_lite/images/mobile9.png) -202px 0;
+}
+
+#close-control{
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	z-index: 900;
+	height: 24px;
+	width: 24px;
+    background: url(icons/close.png);
 }
 
 .icon-scale {
