@@ -211,7 +211,7 @@ div.disclaimer{
 #layer-toggle{
 	height: 60px;
 	width: 60px;
-    margin-right:13px;
+    margin-right:7px;
     background: url(icons/layers.png) -1px -1px;
 }
 #layer-toggle:hover, #layer-toggle:active{
