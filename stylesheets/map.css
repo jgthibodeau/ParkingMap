@@ -221,7 +221,7 @@ div.disclaimer{
 #directions-toggle{
 	height: 60px;
 	width: 60px;
-    margin-right:13px;
+    margin-right:7px;
     background: url(https://maps.gstatic.com/mapfiles/maps_lite/images/mobile9.png) -74px -65px;
 }
 #directions-toggle:hover, #directions-toggle:active{
@@ -231,7 +231,7 @@ div.disclaimer{
 #print-button{
 	height: 60px;
 	width: 60px;
-    margin-right:13px;
+    margin-right:7px;
     background: url(icons/printer.png) -1px -1px;
 }
 #print-button:hover, #print-button:active{
@@ -252,7 +252,7 @@ div.disclaimer{
 	height: 60px;
 	width: 60px;
     background: url(https://maps.gstatic.com/mapfiles/maps_lite/images/mobile9.png) -74px 0;
-    margin-right:13px;
+    margin-right:7px;
 }
 #where-am-i:hover{
     background: url(https://maps.gstatic.com/mapfiles/maps_lite/images/mobile9.png) -138px 0;
