@@ -262,7 +262,7 @@ function initialize() {
 		// suppressMarkers: true,
 		// suppressInfoWindows: true,
 		polylineOptions: pOptions,
-		infowindow: directionInfoWindow
+		infoWindow: directionInfoWindow
 	};
 
 	directionsDisplay = new google.maps.DirectionsRenderer(mDirectionsRendererOptions);
