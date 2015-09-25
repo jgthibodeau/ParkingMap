@@ -6,6 +6,11 @@ var infowindow = new google.maps.InfoWindow({
 	maxWidth: 1000,
 	app: true
 });
+var directionInfoWindow = new google.maps.InfoWindow({
+	// disableAutoPan: true,
+	maxWidth: 1000,
+	direction: true
+});
 var defaultInfoWindow;
 var overlays = [];
 var lots = [];
@@ -257,10 +262,7 @@ function initialize() {
 		// suppressMarkers: true,
 		// suppressInfoWindows: true,
 		polylineOptions: pOptions,
-		infowindow: new google.maps.InfoWindow({
-						// disableAutoPan: true,
-						maxWidth: 1000
-					})
+		infowindow: directionInfoWindow
 	};
 
 	directionsDisplay = new google.maps.DirectionsRenderer(mDirectionsRendererOptions);
@@ -1643,23 +1645,57 @@ function fixInfoWindow() {
 
 
 		if (key === "map" && val != null) {
-			//default infowindow opened
-			if (this.get("app") == undefined) {
-				//close our infowindow if a default map window is opened
-				if(infowindow && infowindow.map != null)
-					infowindow.close();
-				defaultInfoWindow = this;
+			//if our window opened
+			if(this.get("app")){
+				if(defaultInfoWindow && defaultInfoWindow.map != null)
+					defaultInfoWindow.close();
+
+				if(directionInfoWindow && directionInfoWindow.map != null)
+					directionInfoWindow.close();
 
 				//pan to the infowindow if we can
 				if(val != null && this.position != null && this.position != undefined)
 					map.panTo(this.position);
 			}
-			//our infowindow opened
-			else{
-				//close the default map infowindow if our info window is opened
+
+			//if direction window opened
+			else if(this.get("direction")){
 				if(defaultInfoWindow && defaultInfoWindow.map != null)
 					defaultInfoWindow.close();
+
+				if(infowwindow && infowwindow.map != null)
+					infowwindow.close();
 			}
+
+			//if default window opened
+			else{
+				if(infowindow && infowindow.map != null)
+					infowindow.close();
+
+				if(directionInfoWindow && directionInfoWindow.map != null)
+					directionInfoWindow.close();
+				
+				defaultInfoWindow = this;
+			}
+
+
+			// //default infowindow opened
+			// if (this.get("app") == undefined) {
+			// 	//close our infowindow if a default map window is opened
+			// 	if(infowindow && infowindow.map != null)
+			// 		infowindow.close();
+			// 	defaultInfoWindow = this;
+
+			// 	//pan to the infowindow if we can
+			// 	if(val != null && this.position != null && this.position != undefined)
+			// 		map.panTo(this.position);
+			// }
+			// //our infowindow opened
+			// else{
+			// 	//close the default map infowindow if our info window is opened
+			// 	if(defaultInfoWindow && defaultInfoWindow.map != null)
+			// 		defaultInfoWindow.close();
+			// }
 
 		}
 
