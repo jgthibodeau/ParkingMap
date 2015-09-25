@@ -4,12 +4,12 @@ var map;
 var infowindow = new google.maps.InfoWindow({
 	// disableAutoPan: true,
 	maxWidth: 1000,
-	app: true
+	app: 0
 });
 var directionInfoWindow = new google.maps.InfoWindow({
 	// disableAutoPan: true,
 	maxWidth: 1000,
-	direction: true
+	direction: 1
 });
 var defaultInfoWindow;
 var overlays = [];
@@ -1646,7 +1646,7 @@ function fixInfoWindow() {
 
 		if (key === "map" && val != null) {
 			//if our window opened
-			if(this.get("app")){
+			if(this.get("app") == 0){
 				if(defaultInfoWindow && defaultInfoWindow.map != null)
 					defaultInfoWindow.close();
 
@@ -1659,7 +1659,7 @@ function fixInfoWindow() {
 			}
 
 			//if direction window opened
-			else if(this.get("direction")){
+			else if(this.get("app") == 1){
 				if(defaultInfoWindow && defaultInfoWindow.map != null)
 					defaultInfoWindow.close();
 
@@ -1674,7 +1674,7 @@ function fixInfoWindow() {
 
 				if(directionInfoWindow && directionInfoWindow.map != null)
 					directionInfoWindow.close();
-				
+
 				defaultInfoWindow = this;
 			}
 
