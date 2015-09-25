@@ -9,7 +9,7 @@ var infowindow = new google.maps.InfoWindow({
 var directionInfoWindow = new google.maps.InfoWindow({
 	// disableAutoPan: true,
 	maxWidth: 1000,
-	direction: 1
+	app: 1
 });
 var defaultInfoWindow;
 var overlays = [];
