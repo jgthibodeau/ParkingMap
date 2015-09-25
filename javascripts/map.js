@@ -256,7 +256,11 @@ function initialize() {
 		map: map,
 		// suppressMarkers: true,
 		// suppressInfoWindows: true,
-		polylineOptions: pOptions
+		polylineOptions: pOptions,
+		infowindow: new google.maps.InfoWindow({
+						// disableAutoPan: true,
+						maxWidth: 1000
+					})
 	};
 
 	directionsDisplay = new google.maps.DirectionsRenderer(mDirectionsRendererOptions);
@@ -1638,9 +1642,9 @@ function fixInfoWindow() {
 		var self = $('.gm-style-iw');
 
 
-		if (key === "map") {
+		if (key === "map" && val != null) {
 			//default infowindow opened
-			if (this.get("app") != undefined) {
+			if (this.get("app") == undefined) {
 				//close our infowindow if a default map window is opened
 				if(infowindow && infowindow.map != null)
 					infowindow.close();
@@ -1659,7 +1663,7 @@ function fixInfoWindow() {
 
 		}
 
-		if(key === "content"){
+		if(key === "content" && val != null){
 			//edit the infowindow to have extra stuff
 			if($(val).find('#directions-to-button').length == 0){
 				var footer = generateInfoWindowFooter(this.getPosition());
