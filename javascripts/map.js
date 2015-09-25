@@ -808,9 +808,11 @@ function generateInfoWindowFooter(position){
 
 	//create directions to and from buttons
 	var directionsToButton = document.createElement('button');
+	directionsToButton.id = "directions-to-button";
 	directionsToButton.innerHTML = 'Directions To Here';
 
 	var directionsFromButton  = document.createElement('button');
+	directionsFromButton.id = "directions-from-button";
 	directionsFromButton.innerHTML = 'Directions From Here';
 
 	//add events so that directions to/from buttons set the start and end point, and fill in the search boxes with the closest address to make it aparent to the user what has happened
@@ -1653,8 +1655,10 @@ function fixInfoWindow() {
 			}
 
 			//edit the infowindow to have extra stuff
-			var footer = generateInfoWindowFooter(this.getPosition());
-			$(this.content).append(footer);
+			if(this.content.find('#directions-to-button').length > 0){
+				var footer = generateInfoWindowFooter(this.getPosition());
+				$(this.content).append(footer);
+			}
 		}
 		set.apply(this, arguments);
 	}
