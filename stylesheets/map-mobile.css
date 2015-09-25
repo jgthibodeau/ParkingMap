@@ -247,7 +247,7 @@ input{
 }
 
 #close-control{
-	padding: 0px !important;
+	padding: 0px;
 	position: absolute;
 	top: 4px;
 	left: 2px;
