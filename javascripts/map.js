@@ -1640,10 +1640,6 @@ function fixInfoWindow() {
 	//As Google doesn't know about this option, its InfoWindows will not be opened.
 	var set = google.maps.InfoWindow.prototype.set;
 	google.maps.InfoWindow.prototype.set = function (key, val) {
-		// var self = this;
-		var self = $('.gm-style-iw');
-
-
 		if (key === "map" && val != null) {
 			//if our window opened
 			if(this.get("app") == 0){
@@ -1677,26 +1673,6 @@ function fixInfoWindow() {
 
 				defaultInfoWindow = this;
 			}
-
-
-			// //default infowindow opened
-			// if (this.get("app") == undefined) {
-			// 	//close our infowindow if a default map window is opened
-			// 	if(infowindow && infowindow.map != null)
-			// 		infowindow.close();
-			// 	defaultInfoWindow = this;
-
-			// 	//pan to the infowindow if we can
-			// 	if(val != null && this.position != null && this.position != undefined)
-			// 		map.panTo(this.position);
-			// }
-			// //our infowindow opened
-			// else{
-			// 	//close the default map infowindow if our info window is opened
-			// 	if(defaultInfoWindow && defaultInfoWindow.map != null)
-			// 		defaultInfoWindow.close();
-			// }
-
 		}
 
 		if(key === "content" && val != null){
