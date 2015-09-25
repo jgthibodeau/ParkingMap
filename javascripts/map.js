@@ -1048,12 +1048,10 @@ function toggleControls(id){
 		$('#control-cell').find('.toggle-div').hide('fast');
 		$('#control-cell').show('fast');
 		$('#'+id).show('fast');
-		// $('#close-control').show('fast');
 	}
 	else{
 		$('#control-cell').find('.toggle-div').hide('fast');
 		$('#control-cell').hide('fast');
-		// $('#close-control').hide('fast');
 	}
 	google.maps.event.trigger(map, 'resize');
 }
