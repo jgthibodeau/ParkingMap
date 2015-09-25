@@ -57,13 +57,18 @@ fieldset{
 }
 
 /*Control panel stuff*/
+#scrollable-cell{
+	max-height: calc(100% - 30px);
+    overflow-y: scroll;
+}
+
 #control-cell{
 	background-color: white;
 	position: absolute;
 	z-index: 900;
 	height:100%;
 	white-space: nowrap;
-	overflow-y: auto;
+	overflow-y: hidden;
 	overflow-x: hidden;
 	width: 100%;
 }
@@ -96,19 +101,6 @@ fieldset{
 }
 
 /*legend*/
-#legend{
-	background-color: white;
-	border: 1px solid grey;
-	border-radius: 2px;
-
-	z-index: 801;
-	position: absolute;
-	bottom: 9px;
-	right: 10px;
-}
-#legend-title{
-	text-align: center;
-}
 .layer-icon{
 	margin-top:-2px;
 	position: absolute;
@@ -205,6 +197,12 @@ input{
 }
 .link-box{
 	padding-top: 0px !important;
+	white-space:normal;
+	margin-top: 10px;
+}
+#icon-scale-div{
+	margin-top: 3px;
+	margin-bottom: 50px;
 }
 
 

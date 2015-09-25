@@ -104,19 +104,6 @@ fieldset{
 }
 
 /*legend*/
-#legend{
-	background-color: white;
-	border: 1px solid grey;
-	border-radius: 2px;
-
-	z-index: 801;
-	position: absolute;
-	bottom: 9px;
-	right: 10px;
-}
-#legend-title{
-	text-align: center;
-}
 .layer-icon{
 	margin-top:-2px;
 	position: absolute;
@@ -206,6 +193,12 @@ div.disclaimer{
 }
 .link-box{
 	padding-top: 0px !important;
+	white-space:normal;
+	margin-top: 10px;
+}
+#icon-scale-div{
+	margin-top: 3px;
+	margin-bottom: 50px;
 }
 
 
