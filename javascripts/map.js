@@ -1663,8 +1663,8 @@ function fixInfoWindow() {
 				if(defaultInfoWindow && defaultInfoWindow.map != null)
 					defaultInfoWindow.close();
 
-				if(infowwindow && infowwindow.map != null)
-					infowwindow.close();
+				if(infowindow && infowindow.map != null)
+					infowindow.close();
 			}
 
 			//if default window opened
