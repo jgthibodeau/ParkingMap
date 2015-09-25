@@ -256,7 +256,8 @@ function initialize() {
 		map: map,
 		// suppressMarkers: true,
 		// suppressInfoWindows: true,
-		polylineOptions: pOptions
+		polylineOptions: pOptions,
+		infowindow: infowindow
 	};
 
 	directionsDisplay = new google.maps.DirectionsRenderer(mDirectionsRendererOptions);
@@ -1634,32 +1635,39 @@ function fixInfoWindow() {
 	//As Google doesn't know about this option, its InfoWindows will not be opened.
 	var set = google.maps.InfoWindow.prototype.set;
 	google.maps.InfoWindow.prototype.set = function (key, val) {
-		var self = this;
+		// var self = this;
+		var self = $('.gm-style-iw');
+
+
 		if (key === "map") {
 			//default infowindow opened
-			if (!this.get("app")) {
+			if (this.get("app") != undefined) {
 				//close our infowindow if a default map window is opened
 				if(infowindow && infowindow.map != null)
 					infowindow.close();
 				defaultInfoWindow = this;
 
 				//pan to the infowindow if we can
-				if(this.position != null && this.position != undefined)
-					// console.log();
+				if(val != null && this.position != null && this.position != undefined)
 					map.panTo(this.position);
 			}
+			//our infowindow opened
 			else{
-				//close the default map infowindow if our infow window is opened
-				if(defaultInfoWindow && defaultInfoWindow.map != null)	
+				//close the default map infowindow if our info window is opened
+				if(defaultInfoWindow && defaultInfoWindow.map != null)
 					defaultInfoWindow.close();
 			}
 
+		}
+
+		if(key === "content"){
 			//edit the infowindow to have extra stuff
-			if(this.content.find('#directions-to-button').length > 0){
+			if($(val).find('#directions-to-button').length == 0){
 				var footer = generateInfoWindowFooter(this.getPosition());
-				$(this.content).append(footer);
+				$(val).append(footer);
 			}
 		}
+
 		set.apply(this, arguments);
 	}
 }
