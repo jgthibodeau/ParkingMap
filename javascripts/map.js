@@ -1045,13 +1045,13 @@ function updateLayer(checkbox, others){
 */
 function toggleControls(id){
 	if($('#control-cell').is(':hidden') || $('#'+id).is(':hidden')){
-		$('#control-cell').children('.toggle-div').hide('fast');
+		$('#control-cell').find('.toggle-div').hide('fast');
 		$('#control-cell').show('fast');
 		$('#'+id).show('fast');
 		$('#close-control').show('fast');
 	}
 	else{
-		$('#control-cell').children('.toggle-div').hide('fast');
+		$('#control-cell').find('.toggle-div').hide('fast');
 		$('#control-cell').hide('fast');
 		$('#close-control').hide('fast');
 	}

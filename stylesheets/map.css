@@ -258,6 +258,7 @@ div.disclaimer{
 }
 
 #close-control{
+	padding: 0px;
 	position: absolute;
 	top: 2px;
 	left: 2px;
