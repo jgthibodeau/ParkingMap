@@ -512,10 +512,10 @@ function initialize() {
 	//move find me control into google maps toolbar
 	var findMeDiv = document.createElement('div');
 	$('#where-am-i').click(function(){findMe()});
-	map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push($('#layer-toggle')[0]);
-	map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push($('#directions-toggle')[0]);
-	map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push($('#where-am-i')[0]);
-	map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push($('#print-button')[0]);
+	map.controls[google.maps.ControlPosition.RIGHT_TOP].push($('#layer-toggle')[0]);
+	map.controls[google.maps.ControlPosition.RIGHT_TOP].push($('#directions-toggle')[0]);
+	map.controls[google.maps.ControlPosition.RIGHT_TOP].push($('#where-am-i')[0]);
+	map.controls[google.maps.ControlPosition.RIGHT_TOP].push($('#print-button')[0]);
 
 	//add listener for when zoom level changes so that we can scale icons correctly
 	google.maps.event.addListener(map, 'zoom_changed', function(){
