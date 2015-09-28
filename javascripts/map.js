@@ -1677,10 +1677,11 @@ function fixInfoWindow() {
 
 		if(key === "content" && val != null){
 			//edit the infowindow to have extra stuff
-			if($(val).find('#directions-to-button').length == 0){
-				var footer = generateInfoWindowFooter(this.getPosition());
-				$(val).append(footer);
-			}
+			$(val).remove('#directions-to-button');
+			$(val).remove('#directions-from-button');
+			
+			var footer = generateInfoWindowFooter(this.getPosition());
+			$(val).append(footer);
 		}
 
 		set.apply(this, arguments);
