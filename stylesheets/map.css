@@ -81,7 +81,7 @@ fieldset{
 	padding-right: 45px;
 }
 
-#control-panel{
+#control-panel, #directions-panel{
 	white-space: nowrap;
 	position: relative;
 }
