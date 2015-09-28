@@ -1665,12 +1665,9 @@ function fixInfoWindow() {
 
 				defaultInfoWindow = this;
 			}
-		}
 
-		if(key === "content" && val != null){
-			//edit the infowindow to have extra stuff
+			//ensure directions buttons are set up correctly
 			$(val).find('#direction-buttons').remove();
-
 			var footer = generateInfoWindowFooter(this.getPosition());
 			$(val).append(footer);
 		}
