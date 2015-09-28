@@ -78,7 +78,7 @@ fieldset{
 }
 #control-cell > div{
 	padding: 15px;
-	padding-right: 45px;
+	padding-right: 35px;
 }
 
 #control-panel, #directions-panel{
@@ -98,7 +98,7 @@ fieldset{
 	border-collapse: collapse;
 	height:100%;
 	white-space: nowrap;
-	width:300px;
+	/*width:300px;*/
 }
 #directions-show{
 	white-space: normal;
