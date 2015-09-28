@@ -828,7 +828,7 @@ function generateInfoWindowFooter(position){
 											geocoder.geocode({'latLng': position}, function(results, status) {
 												if (status == google.maps.GeocoderStatus.OK) {
 													if (results[0]) {
-														$('#end_autocomplete').val(results[0].formatted_address);
+														$('#start_autocomplete').val(results[0].formatted_address);
 													} else {
 														alert('No results found');
 													}
@@ -845,7 +845,7 @@ function generateInfoWindowFooter(position){
 											geocoder.geocode({'latLng': position}, function(results, status) {
 												if (status == google.maps.GeocoderStatus.OK) {
 													if (results[0]) {
-														$('#start_autocomplete').val(results[0].formatted_address);
+														$('#end_autocomplete').val(results[0].formatted_address);
 													} else {
 														alert('No results found');
 													}
