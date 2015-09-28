@@ -58,6 +58,7 @@ fieldset{
 #scrollable-cell{
 	max-height: calc(100% - 30px);
     overflow-y: scroll;
+    position: relative;
 }
 
 #control-cell{
