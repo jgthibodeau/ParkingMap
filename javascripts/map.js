@@ -789,16 +789,6 @@ function setInitialLayers(){
 
 		anyDirections = true;
 	}
-
-
-	// if(params["scale"] != undefined){
-	// 	if(params["scale"] < minIcon)
-	// 		iconScaler = minIcon;
-	// 	else if(params["scale"] > maxIcon)
-	// 		iconScaler = maxIcon;
-	// 	else
-	// 		iconScaler = params["scale"];
-	// }
 }
 
 function getElementsByClassName(object, className) {
@@ -811,51 +801,53 @@ function getElementsByClassName(object, className) {
 function generateInfoWindowFooter(position){
 	//create an empty div
 	var div = document.createElement('div');
+	div.id = "direction-buttons";
 
 	//create directions to and from buttons
 	var directionsFromButton  = document.createElement('button');
-	directionsFromButton.id = "directions-from-button";
 	directionsFromButton.innerHTML = 'Directions From Here';
 
 	var directionsToButton = document.createElement('button');
-	directionsToButton.id = "directions-to-button";
 	directionsToButton.innerHTML = 'Directions To Here';
 
 	//add events so that directions to/from buttons set the start and end point, and fill in the search boxes with the closest address to make it aparent to the user what has happened
-	directionsFromButton.onclick = (function (position) {
-										return function () {
-											geocoder = new google.maps.Geocoder();
-											geocoder.geocode({'latLng': position}, function(results, status) {
-												if (status == google.maps.GeocoderStatus.OK) {
-													if (results[0]) {
-														$('#start_autocomplete').val(results[0].formatted_address);
-													} else {
-														alert('No results found');
-													}
-												} else {
-													alert('Geocoder failed due to: ' + status);
-												}
-											});
-											setStart(position);
-										};
-									})(position);
-	directionsToButton.onclick = (function (position) {
-										return function () {
-											geocoder = new google.maps.Geocoder();
-											geocoder.geocode({'latLng': position}, function(results, status) {
-												if (status == google.maps.GeocoderStatus.OK) {
-													if (results[0]) {
-														$('#end_autocomplete').val(results[0].formatted_address);
-													} else {
-														alert('No results found');
-													}
-												} else {
-													alert('Geocoder failed due to: ' + status);
-												}
-											});
-											setEnd(position);
-										};
-									})(position);
+	directionsFromButton.onclick = dynamicStart(position);
+	function dynamicStart(position){
+		return function () {
+			geocoder = new google.maps.Geocoder();
+			geocoder.geocode({'latLng': position}, function(results, status) {
+				if (status == google.maps.GeocoderStatus.OK) {
+					if (results[0]) {
+						$('#start_autocomplete').val(results[0].formatted_address);
+					} else {
+						alert('No results found');
+					}
+				} else {
+					alert('Geocoder failed due to: ' + status);
+				}
+			});
+			setStart(position);
+		};
+	}
+
+	directionsToButton.onclick = dynamicEnd(position);
+	function dynamicEnd(position){
+		return function () {
+			geocoder = new google.maps.Geocoder();
+			geocoder.geocode({'latLng': position}, function(results, status) {
+				if (status == google.maps.GeocoderStatus.OK) {
+					if (results[0]) {
+						$('#end_autocomplete').val(results[0].formatted_address);
+					} else {
+						alert('No results found');
+					}
+				} else {
+					alert('Geocoder failed due to: ' + status);
+				}
+			});
+			setEnd(position);
+		};
+	}
 
 	//populate the div and return it
 	div.innerHTML = '<br/>';
@@ -1677,8 +1669,7 @@ function fixInfoWindow() {
 
 		if(key === "content" && val != null){
 			//edit the infowindow to have extra stuff
-			$(val).remove('#directions-to-button');
-			$(val).remove('#directions-from-button');
+			$(val).find('#direction-buttons').remove();
 
 			var footer = generateInfoWindowFooter(this.getPosition());
 			$(val).append(footer);
