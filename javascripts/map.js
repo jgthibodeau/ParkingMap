@@ -1667,9 +1667,9 @@ function fixInfoWindow() {
 			}
 
 			//ensure directions buttons are set up correctly
-			$(val).find('#direction-buttons').remove();
+			$(this.content).find('#direction-buttons').remove();
 			var footer = generateInfoWindowFooter(this.getPosition());
-			$(val).append(footer);
+			$(this.content).append(footer);
 		}
 
 		set.apply(this, arguments);
