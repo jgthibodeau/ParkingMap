@@ -213,6 +213,7 @@ div.disclaimer{
 
 
 #layer-toggle{
+    cursor:pointer;
 	height: 60px;
 	width: 60px;
     margin-right:7px;
@@ -223,6 +224,7 @@ div.disclaimer{
 }
 
 #directions-toggle{
+    cursor:pointer;
 	height: 60px;
 	width: 60px;
     margin-right:7px;
@@ -233,6 +235,7 @@ div.disclaimer{
 }
 
 #print-button{
+    cursor:pointer;
 	height: 60px;
 	width: 60px;
     margin-right:7px;
@@ -243,6 +246,7 @@ div.disclaimer{
 }
 
 #where-am-i{
+    cursor:pointer;
 	height: 60px;
 	width: 60px;
     background: url(https://maps.gstatic.com/mapfiles/maps_lite/images/mobile9.png) -74px 0;
@@ -256,6 +260,7 @@ div.disclaimer{
 }
 
 #close-control{
+    cursor:pointer;
 	padding: 0px;
 	position: absolute;
 	top: 2px;
