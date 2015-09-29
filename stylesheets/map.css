@@ -163,7 +163,7 @@ fieldset{
 .transit + label {
     float:left;
     cursor:pointer;
-    height:3em;
+    min-height:3em;
 	width:24.5%;
 	margin-right:-1px;
 	background-color:#EFEFEF;
@@ -269,7 +269,7 @@ div.disclaimer{
 .icon-scale + label {
     float:left;
     cursor:pointer;
-    height:3em;
+    min-height:3em;
 	width:32.8%;
 	margin-right:-1px;
 	background-color:#EFEFEF;
